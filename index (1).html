@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Addicted to Chaos — Psyche Files</title>
+<meta name="description" content="Why peace feels like a threat, and what your nervous system has been trying to tell you. A 51-page diagnostic ebook from Psyche Files.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0C0E;
+    --surface:#15171B;
+    --surface-2:#1B1E23;
+    --line:#2A2D33;
+    --ink:#ECE8E1;
+    --ink-dim:#9A9C9F;
+    --ember:#C9472B;
+    --ember-dim:#7A2E1C;
+    --calm:#4E7C8C;
+    --calm-dim:#2E4A54;
+    --max:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--ember);color:#fff;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    line-height:1.12;
+    margin:0;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ember);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow.calm{color:var(--calm);}
+  .eyebrow::before{
+    content:'';
+    width:16px;height:1px;
+    background:currentColor;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  section{padding:88px 0;}
+  @media (max-width:600px){ section{padding:56px 0;} }
+
+  /* ---------- waveform signature ---------- */
+  .wave{
+    width:100%;
+    height:56px;
+    display:block;
+  }
+  .wave path{
+    fill:none;
+    stroke-width:1.5;
+    vector-effect:non-scaling-stroke;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    padding:20px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.08em;
+  }
+  .brand b{color:var(--ink);}
+  .brand span{color:var(--ink-dim);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:64px 0 48px;
+    text-align:center;
+  }
+  .hero h1{
+    font-size:clamp(34px,6vw,54px);
+    font-style:italic;
+    margin:22px 0 20px;
+  }
+  .hero .sub{
+    max-width:520px;
+    margin:0 auto 34px;
+    color:var(--ink-dim);
+    font-size:17px;
+  }
+  .btn{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    background:var(--ember);
+    color:#fff;
+    text-decoration:none;
+    padding:16px 30px;
+    border-radius:3px;
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:.01em;
+    transition:transform .15s ease, background .15s ease;
+    border:none;
+    cursor:pointer;
+  }
+  .btn:hover{background:#B33D24;transform:translateY(-1px);}
+  .btn small{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:400;
+    font-size:11px;
+    opacity:.85;
+    letter-spacing:.05em;
+  }
+  .microcopy{
+    margin-top:14px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:var(--ink-dim);
+    letter-spacing:.04em;
+  }
+
+  /* ---------- checklist section ---------- */
+  .checklist-section{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .checklist{
+    list-style:none;
+    padding:0;margin:28px 0 0;
+    display:grid;
+    gap:14px;
+  }
+  .checklist li{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    font-size:16px;
+    color:var(--ink);
+    padding:14px 16px;
+    background:var(--surface-2);
+    border-left:2px solid var(--ember-dim);
+    border-radius:2px;
+  }
+  .checklist li b{color:var(--ink);}
+  .checklist .mark{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--ember);
+    flex:none;
+    padding-top:1px;
+  }
+  .callout{
+    margin-top:26px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--ink-dim);
+    text-align:center;
+  }
+
+  /* ---------- mechanism (calm) ---------- */
+  .mechanism h2{font-size:clamp(26px,4vw,34px);font-style:italic;margin:16px 0 20px;}
+  .mechanism p{color:var(--ink-dim);font-size:16px;max-width:600px;}
+  .mechanism p + p{margin-top:14px;}
+  .mechanism strong{color:var(--ink);font-weight:500;}
+
+  /* ---------- inside / roadmap ---------- */
+  .roadmap-section{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .roadmap{
+    margin-top:28px;
+    display:grid;
+    gap:0;
+  }
+  .roadmap-item{
+    display:grid;
+    grid-template-columns:40px 1fr;
+    gap:16px;
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .roadmap-item:last-child{border-bottom:none;}
+  .roadmap-num{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--ember);
+    font-size:13px;
+    padding-top:3px;
+  }
+  .roadmap-item h3{
+    font-size:18px;
+    font-style:italic;
+    margin-bottom:6px;
+  }
+  .roadmap-item p{
+    color:var(--ink-dim);
+    font-size:14.5px;
+    margin:0;
+  }
+
+  /* ---------- transparency ---------- */
+  .transparency-grid{
+    display:grid;
+    gap:14px;
+    margin-top:28px;
+  }
+  .t-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    align-items:start;
+  }
+  @media (max-width:600px){ .t-row{grid-template-columns:1fr;} }
+  .t-col{
+    padding:18px 20px;
+    border-radius:2px;
+    font-size:14.5px;
+  }
+  .t-col.no{
+    background:rgba(201,71,43,.06);
+    border:1px solid var(--ember-dim);
+    color:var(--ink-dim);
+  }
+  .t-col.yes{
+    background:rgba(78,124,140,.08);
+    border:1px solid var(--calm-dim);
+    color:var(--ink);
+  }
+  .t-col .label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.1em;
+    display:block;
+    margin-bottom:8px;
+  }
+  .t-col.no .label{color:var(--ember);}
+  .t-col.yes .label{color:var(--calm);}
+
+  /* ---------- fit ---------- */
+  .fit-section{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .fit-grid{display:grid;gap:16px;margin-top:24px;}
+  @media (min-width:640px){ .fit-grid{grid-template-columns:1fr 1fr;} }
+  .fit-col h3{font-size:15px;font-family:'IBM Plex Mono',monospace;font-style:normal;letter-spacing:.04em;margin-bottom:14px;}
+  .fit-col.for h3{color:var(--calm);}
+  .fit-col.against h3{color:var(--ink-dim);}
+  .fit-col ul{padding-left:18px;margin:0;color:var(--ink-dim);font-size:14.5px;}
+  .fit-col li{margin-bottom:10px;}
+
+  /* ---------- faq ---------- */
+  details{
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+  }
+  details summary{
+    cursor:pointer;
+    font-weight:500;
+    font-size:15.5px;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{
+    content:'+';
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--ember);
+    font-size:18px;
+    flex:none;
+  }
+  details[open] summary::after{content:'–';}
+  details p{
+    color:var(--ink-dim);
+    font-size:14.5px;
+    margin:12px 0 0;
+    max-width:600px;
+  }
+
+  /* ---------- pricing ---------- */
+  .pricing{
+    text-align:center;
+    background:var(--surface);
+    border-top:1px solid var(--line);
+  }
+  .price-card{
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:44px 28px;
+    max-width:420px;
+    margin:28px auto 0;
+  }
+  .price-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--ink-dim);
+    text-decoration:line-through;
+    margin-bottom:2px;
+  }
+  .price-amount{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:52px;
+    margin-bottom:6px;
+  }
+  .price-amount span{font-size:22px;vertical-align:top;position:relative;top:8px;}
+  .price-note{
+    font-size:13px;
+    color:var(--ink-dim);
+    margin-bottom:24px;
+  }
+  .cost-note{
+    margin-top:22px;
+    font-size:13px;
+    color:var(--ink-dim);
+    max-width:420px;
+    margin-left:auto;margin-right:auto;
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:40px 24px 60px;
+    text-align:center;
+    color:var(--ink-dim);
+    font-size:13px;
+  }
+  footer .brand{margin-bottom:10px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand"><b>PSYCHE FILES</b> <span>@psychefiles</span></div>
+  <div class="brand" style="opacity:.6">DARK PSYCHOLOGY OF THE SELF</div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <svg class="wave" viewBox="0 0 400 56" preserveAspectRatio="none">
+      <path stroke="#C9472B" d="M0,28 L40,28 L48,6 L56,50 L64,10 L72,44 L80,28 L120,28 L128,4 L136,52 L144,28 L200,28 L204,20 L208,36 L212,28 L260,28 L264,24 L268,32 L272,28 L400,28"/>
+    </svg>
+    <div class="eyebrow" style="justify-content:center;">A DIAGNOSTIC, NOT A SELF-HELP BOOK</div>
+    <h1>Why does peace<br>feel like a threat?</h1>
+    <p class="sub">If a quiet Sunday afternoon tightens your chest faster than a bad email does, this isn't a personality flaw. It's chemistry that was never given the chance to reset — and this book shows you exactly why.</p>
+    <a class="btn" href="#pricing"><small>51 PAGES · INSTANT PDF</small>GET THE DIAGNOSIS — $21.90</a>
+    <div class="microcopy">ADDICTED TO CHAOS — VOL. 01 OF THE ANATOMY OF THE STUCK SELF</div>
+  </div>
+</section>
+
+<section class="checklist-section">
+  <div class="wrap">
+    <div class="eyebrow">SELF-CHECK</div>
+    <h2 style="font-size:clamp(24px,4vw,30px);font-style:italic;margin-top:14px;">Count how many of these are you.</h2>
+    <ul class="checklist">
+      <li><span class="mark">01</span><span>A calm evening makes you open your banking app <b>for no reason at all.</b></span></li>
+      <li><span class="mark">02</span><span>You've picked a fight over dishes that never actually bothered you — right after a week that had been unusually quiet.</span></li>
+      <li><span class="mark">03</span><span>Good news makes you brace for the version where it falls apart, before you've let yourself enjoy it.</span></li>
+      <li><span class="mark">04</span><span>You feel more focused, more <i>alive</i>, in the middle of a crisis than on an ordinary Tuesday.</span></li>
+      <li><span class="mark">05</span><span>A slow week at work feels less like relief and more like something is <b>wrong.</b></span></li>
+      <li><span class="mark">06</span><span>You're the one who always knows something's off in a room before anyone says a word — and it's exhausting.</span></li>
+    </ul>
+    <p class="callout">Three or more, and the alarm this book is about is already running in your body right now.</p>
+  </div>
+</section>
+
+<section class="mechanism">
+  <div class="wrap">
+    <div class="eyebrow calm">THE MECHANISM</div>
+    <h2>Your body isn't broken. It's running on the wrong fuel.</h2>
+    <p>Cortisol is supposed to be emergency fuel — a generator that kicks on during a real threat, then powers back down. If your nervous system learned, early and often, to expect danger around every corner, that generator <strong>never gets the signal to shut off.</strong></p>
+    <p>So when an actual calm moment shows up, your body reads the drop in cortisol the same way it would read a sudden threat. Not because anything is wrong — because something <i>changed</i>, and to a body wired this tightly, change means danger until proven otherwise.</p>
+    <p>This is the exact mechanism <b>Addicted to Chaos</b> spends 51 pages taking apart — page by page, symptom by symptom — until it stops looking like a character flaw and starts looking like chemistry you can actually work with.</p>
+  </div>
+</section>
+
+<section class="roadmap-section">
+  <div class="wrap">
+    <div class="eyebrow">WHAT'S INSIDE</div>
+    <h2 style="font-size:clamp(24px,4vw,30px);font-style:italic;margin:14px 0 6px;">51 pages. One nervous system, fully dissected.</h2>
+    <div class="roadmap">
+      <div class="roadmap-item">
+        <div class="roadmap-num">01</div>
+        <div><h3>The Radar</h3><p>Why you read every room before you've taken your shoes off — at work, in love, and at 3am when nothing's actually happening.</p></div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">02</div>
+        <div><h3>The Chemical Behind the Curtain</h3><p>Cortisol, dopamine, and the exact reason calm gets filed in the same folder as danger.</p></div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">03</div>
+        <div><h3>The High You Didn't Choose</h3><p>Why crisis feels like coming home, and ordinary days start to feel flat by comparison.</p></div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">04</div>
+        <div><h3>The House You Grew Up In</h3><p>Where the blueprint came from — and why you keep choosing the same emotional weather as an adult.</p></div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">05</div>
+        <div><h3>The Business Partner You Never Hired</h3><p>The part of you that manufactures small fires the moment life gets quiet — named, finally, so you can talk back to it.</p></div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-num">06</div>
+        <div><h3>Who Are You Without the Alarm</h3><p>What's actually left standing once the radar finally, slowly, learns to rest.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="transparency">
+  <div class="wrap">
+    <div class="eyebrow calm">BEFORE YOU BUY</div>
+    <h2 style="font-size:clamp(24px,4vw,30px);font-style:italic;margin:14px 0 6px;">What this book is not.</h2>
+    <div class="transparency-grid">
+      <div class="t-row">
+        <div class="t-col no"><span class="label">NOT INSIDE</span>A 5-step morning routine or a productivity hack disguised as healing.</div>
+        <div class="t-col yes"><span class="label">WHAT IT IS</span>A plain-language breakdown of why your nervous system reacts the way it does — so you can finally work with it instead of against it.</div>
+      </div>
+      <div class="t-row">
+        <div class="t-col no"><span class="label">NOT INSIDE</span>A promise that reading 51 pages erases years of wiring overnight.</div>
+        <div class="t-col yes"><span class="label">WHAT IT IS</span>The recognition and the mechanism laid out clearly enough that you can start noticing the pattern in real time — which is where every actual change begins.</div>
+      </div>
+      <div class="t-row">
+        <div class="t-col no"><span class="label">NOT INSIDE</span>A replacement for therapy, medication, or professional care if you need it.</div>
+        <div class="t-col yes"><span class="label">WHAT IT IS</span>A companion that makes the pattern visible, so those conversations — if you have them — start from a much clearer place.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fit-section">
+  <div class="wrap">
+    <div class="eyebrow">IS THIS FOR YOU</div>
+    <div class="fit-grid">
+      <div class="fit-col for">
+        <h3>THIS IS FOR YOU IF</h3>
+        <ul>
+          <li>Calm has quietly felt harder to sit in than a crisis for as long as you can remember.</li>
+          <li>You're tired of hearing "just relax" from people who don't understand why you can't.</li>
+          <li>You want the mechanism explained in plain biology, not therapy-speak.</li>
+        </ul>
+      </div>
+      <div class="fit-col against">
+        <h3>THIS ISN'T FOR YOU IF</h3>
+        <ul>
+          <li>You're looking for a quick checklist rather than an actual explanation.</li>
+          <li>You're in an acute crisis right now and need direct support, not a book.</li>
+          <li>You want case studies and citations rather than a reading experience.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="eyebrow calm">QUESTIONS</div>
+    <h2 style="font-size:clamp(24px,4vw,30px);font-style:italic;margin:14px 0 20px;">Before you decide.</h2>
+
+    <details open>
+      <summary>What format is the ebook, and how long is it?</summary>
+      <p>A 51-page PDF (roughly 300 words per page), delivered instantly after purchase. Readable on phone, tablet, or computer — no app required.</p>
+    </details>
+    <details>
+      <summary>Is this a substitute for therapy?</summary>
+      <p>No. It's a plain-language breakdown of a nervous system pattern, meant to make that pattern visible. If you're working with a therapist, this can make those conversations sharper — it isn't a replacement for one.</p>
+    </details>
+    <details>
+      <summary>How is this different from other anxiety or calm-focused books?</summary>
+      <p>Most books open with the solution. This one opens with recognition — the exact scenes you already live, page after page — before it ever explains the biology behind them. The mechanism comes second, once you've actually seen yourself in it.</p>
+    </details>
+    <details>
+      <summary>What if I have questions after buying?</summary>
+      <p>You can reach out anytime to <a href="mailto:hello@psychefiles.com">hello@psychefiles.com</a> — replies typically within 48 hours.</p>
+    </details>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;">THE COST OF ONE MORE QUIET SUNDAY THAT DOESN'T FEEL LIKE ONE</div>
+    <div class="price-card">
+      <div class="price-amount"><span>$</span>21.90</div>
+      <div class="price-note">One-time payment · instant PDF delivery</div>
+      <a class="btn" style="width:100%;" href="https://pay.hotmart.com/W106609006R" target="_blank" rel="noopener"><small>SECURE CHECKOUT VIA HOTMART</small>GET ADDICTED TO CHAOS</a>
+    </div>
+    <p class="cost-note">The pattern this book explains has been running quietly for years. Fifty-one pages is a short read against that — and the alternative is staying exactly where you already are.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="brand"><b>PSYCHE FILES</b> — @psychefiles</div>
+  <div>Dissecting the nervous system. One pattern at a time.</div>
+</footer>
+
+</body>
+</html>
